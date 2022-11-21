@@ -78,3 +78,59 @@ print(list3) # [1, 3]
 
 ## 组织列表
 
+# sort()对列表进行永久性排序
+#使用 sort() 方法将改变原列表。如果要反转排序，只需向sort()方法传递参数 reverse=True。
+list4 = [1,123,23,5,25]
+list4.sort()
+print(list4) # [1, 5, 23, 25, 123]
+list4.sort(reverse=True)
+print(list4)  # [123, 25, 23, 5, 1]
+
+# 函数sorted()对列表进行临时排序
+# 让你能够按特定顺序显示列表元素，同时不影响它们在列表中的原始排列顺序。
+print(sorted(list4))  # [1, 5, 23, 25, 123]
+print(list4) # [123, 25, 23, 5, 1]
+print(sorted(list4, reverse=True)) # [123, 25, 23, 5, 1]
+
+
+# 反转列表
+# 使用方法 reverse()。 reverse() 也会改变原始列表。
+# reverse() 只会按原来的顺序反转，不会进行额外的按字母排序。
+list4.reverse()
+print(list4) # [1, 5, 23, 25, 123]
+
+# 确定列表的长度
+# 函数len()可快速获悉列表的长度。
+print(len(list4)) # 5
+
+## 操作列表
+
+# 循环
+# 使用 for…in 循环。 
+# python 以缩进来区分代码块，所以需要正确的缩进
+list5 = ['1','2','3','4']
+for val in list5:
+    print(val)
+
+
+# range()
+# Python函数range()让你能够轻松地生成一系列的数字。
+print(range(1,5)) #range(1,5)
+for val in range(1,5): 
+    print(val) # 注意：range() 会产生包含第一个参数但不包含第二个参数的一系列数值。
+
+# 使用 range() 创建列表
+print(list(range(1,6))) # [1, 2, 3, 4, 5]
+
+# range() 还可以指定步长
+print(list(range(1,11,3))) # [1, 4, 7, 10]
+
+
+# 对列表简单的计算
+list6 =[1,2,3,4,523,123,23,21]
+print(max(list6)) #523
+print(min(list6)) #1
+print(sum(list6)) #700
+
+#  列表解析
+# 列表解析将for循环和创建新元素的代码合并成一行，并自动附加新元素。
