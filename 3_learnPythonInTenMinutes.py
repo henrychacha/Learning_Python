@@ -134,3 +134,45 @@ print(sum(list6)) #700
 
 #  列表解析
 # 列表解析将for循环和创建新元素的代码合并成一行，并自动附加新元素。
+print([value**2 for value in range(1,11)]) # [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+# 切片
+# 要创建切片，可指定要使用的第一个元素和最后一个元素的索引。与函数range()一样，Python在到达你指定的第二个索引前面的元素后停止。要输出列表中的前三个元素，需要指定索引0~3，这将输出分别为0、1和2的元素
+name = ['aa','bb','cc','dd']
+print(name[1:4]) 
+# ['bb', 'cc', 'dd']
+
+# 如果你没有指定第一个索引，Python将自动从列表开头开始:
+print(name[:4]) 
+# ['aa', 'bb', 'cc', 'dd']
+
+# 如果没有指定终止索引，将自动取到列表末尾
+print(name[1:])
+# ['bb', 'cc', 'dd']
+
+# 也可以使用负数索引，比如返回最后三个元素
+print(name[-3:])
+# ['bb', 'cc', 'dd']
+print(name[-3:-1])
+# ['bb', 'cc']
+
+# 遍历切片
+for val in name[1:3]:
+    print(val)
+
+
+## 复制列表
+# 可以使用切片来快速复制列表，不指定开始索引和结束索引。
+name2 = name[:]
+print(name2)
+
+# 用切片复制出来的新列表，跟原来的列表是完全不同的列表，改变其实一个不会影响另一个列表。
+name.append('ee')
+print(name)
+print(name2)
+
+# 而如果简单的通过赋值将 names 赋值给 names2，就不能得到两个列表，实际上它们都指向了同一个列表。如果改变其中一个，另一个也将被改变
+name3 = name
+name.append('ff')
+print(name3)
+print(name)
